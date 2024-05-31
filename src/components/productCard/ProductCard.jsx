@@ -89,10 +89,10 @@ function ProductCard() {
 
     return (
         <section className="text-gray-600 body-font">
-            <div className="container px-5 py-8 md:py-10 mx-auto">
-                <div class="lg:w-1/2 w-full mb-6 lg:mb-10" >
-                    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style={{ color: mode === 'dark' ? 'white' : '' }}>Our Latest Collection</h1>
-                    <div class="h-1 w-20 bg-pink-600 rounded" data-aos="fade-up-right" data-aos-duration="500"></div>
+            <div className="container px-5 py-4 md:py-10 mx-auto">
+                <div className="lg:w-1/2 w-full mb-6 lg:mb-10" >
+                    <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style={{ color: mode === 'dark' ? 'white' : '' }}>Our Latest Collection</h1>
+                    <div className="h-1 w-20 bg-pink-600 rounded -z-10 relative" data-aos="fade-up-right" data-aos-duration="500"></div>
                 </div>
 
                 <div className="flex flex-wrap -m-4 sm:space-x-18" >
@@ -104,7 +104,7 @@ function ProductCard() {
                         .map((item, index) => {
                             const { title, price, originalPrice, discountPercentage, productRating, description, imageUrl, stocks, id } = item;
                             return (
-                                <div key={index} className="p-4 lg:w-1/4 md:w-1/3 sm:w-1/2 w-full drop-shadow-lg -z-10" data-aos="zoom-in">
+                                <div key={index} className="product-card p-4 lg:w-1/4 md:w-1/3 sm:w-1/2 w-full drop-shadow-lg" data-aos="zoom-in">
                                     <div className={`h-full flex flex-col justify-between rounded-2xl overflow-hidden ${mode === 'dark' ? 'bg-gray-800 text-white hover:drop-shadow-2xl' : 'bg-white text-gray-900'} hover:shadow-lg transition-shadow duration-300 ease-in-out`}>
                                         <div onClick={() => window.location.href = `/productinfo/${id}`} key={index} className="flex justify-center cursor-pointer">
                                             <img className=" w-full h-64 object-cover object-center p-2 hover:scale-110 transition-scale-110 duration-300 ease-in-out" src={imageUrl} alt="product" />

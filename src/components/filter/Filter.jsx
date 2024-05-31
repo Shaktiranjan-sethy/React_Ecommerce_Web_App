@@ -43,7 +43,7 @@ function Filter({ excludeFashion = false }) {
 
     return (
         <div className='container mx-auto px-4 mt-5'>
-            <div className="lg:p-5 p-2 rounded-lg bg-gray-100 drop-shadow-xl border border-gray-200" style={{ backgroundColor: mode === 'dark' ? '#282c34' : '', color: mode === 'dark' ? 'white' : '' }}>
+            <div className="lg:p-8 p-2 rounded-lg bg-gray-100 drop-shadow-xl border border-gray-200" style={{ backgroundColor: mode === 'dark' ? '#282c34' : '', color: mode === 'dark' ? 'white' : '' }}>
                 <div className="relative">
                     <div className="absolute flex items-center ml-2 h-full">
                         <svg className="w-4 h-4 fill-current text-primary-gray-dark" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,12 +63,12 @@ function Filter({ excludeFashion = false }) {
 
                     <div className=" flex justify-center relative">
                         {isDropdownVisible && searchkey && (
-                            <div className=" absolute bg-gray-200 w-96  md:w-96 lg:w-96 z-50 my-1 rounded-lg px-15 py-2" style={{ backgroundColor: mode === 'dark' ? '#282c34' : '', zIndex: 1000}}>
+                            <div className=" absolute bg-gray-200 w-96  md:w-96 lg:w-96  my-1 rounded-lg px-15 py-2" style={{ backgroundColor: mode === 'dark' ? '#282c34' : ''}}>
                                 {filterSearchData.length > 0 ? (
                                     filterSearchData.map((item, index) => (
                                         <div key={index} className="py-2 px-2 cursor-pointer" onClick={() => handleProductClick(item.id)}>
                                             <div className="flex items-center gap-5 hover:bg-slate-300">
-                                                <img className="w-10" src={item.imageUrl} alt="" />
+                                                <img className="w-10 h-10" src={item.imageUrl} alt="" />
                                                 {item.title}
                                             </div>
                                         </div>
@@ -90,14 +90,14 @@ function Filter({ excludeFashion = false }) {
                     </button>
                 </div>
                 <div className=' px-2 py-0'>
-                    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
+                    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-2">
                         <select value={filterType} onChange={(e) => setFilterType(e.target.value)} className="lg:px-4 lg:py-3 px-4 py-2 w-full rounded-md bg-gray-50 border-transparent outline-0 focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" style={{ backgroundColor: mode === 'dark' ? 'rgb(64 66 70)' : '', color: mode === 'dark' ? 'white' : '' }}>
                             <option value="All">All</option>
                             {uniqueCategories.map((category, index) => (
                                 <option key={index} value={category}>{category}</option>
                             ))}
                         </select>
-                        <select value={filterPrice} onChange={(e) => setFilterPrice(e.target.value)} className="px-4 py-3 w-full rounded-md bg-gray-50 border-transparent outline-0 focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" style={{ backgroundColor: mode === 'dark' ? 'rgb(64 66 70)' : '', color: mode === 'dark' ? 'white' : '' }}>
+                        <select value={filterPrice} onChange={(e) => setFilterPrice(e.target.value)} className="lg:px-4 lg:py-3 px-4 py-2 w-full rounded-md bg-gray-50 border-transparent outline-0 focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" style={{ backgroundColor: mode === 'dark' ? 'rgb(64 66 70)' : '', color: mode === 'dark' ? 'white' : '' }}>
                             {priceRanges.map((range, index) => (
                                 <option key={index} value={range.value}>{range.label}</option>
                             ))}

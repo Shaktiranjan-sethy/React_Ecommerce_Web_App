@@ -76,7 +76,7 @@ function HeroSection() {
           style={{
             display: index === currentImageIndex ? 'block' : 'none',
             width: '100%',
-            height: 'auto',
+            height: '100%',
           }}
         />
       ))}

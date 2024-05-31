@@ -11,6 +11,7 @@ import Banner from '../../components/banner/Banner'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Services from '../../components/services/Services'
+import HeadlineCards from '../../components/headlineCards/HeadlineCards'
 
 function Home() {
 
@@ -34,6 +35,7 @@ function Home() {
     <Layout>
       <HeroSection />
       <Filter excludeFashion={true} />
+      <HeadlineCards/>
       <ProductCard />
       <Banner/>
       <TopProduct products={topProducts}/>

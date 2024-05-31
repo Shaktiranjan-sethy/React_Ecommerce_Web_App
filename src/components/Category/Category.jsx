@@ -48,11 +48,11 @@ const Category = () => {
                 {/* main 1 */}
                 <div className="flex overflow-x-scroll lg:justify-center  hide-scroll-bar">
                     {/* main 2  */}
-                    <div className="grid lg:grid-cols-8 grid-cols-6 ml-2 mr-2 gap-2">
+                    <div className="grid lg:grid-cols-8 md:grid-cols-8 sm:grid-cols-7 grid-cols-5 ml-3 mr-2 gap-2 place-items-center">
                         {/* category  */}
                         {category.map((item, index) => {
                             return (
-                                <div key={index} className="px-3 lg:px-7 sm:px-2 -z-10 " data-aos="fade-up" data-aos-duration="1000">
+                                <div key={index} className="px-3 lg:px-7 sm:px-2 " data-aos="fade-up" data-aos-duration="1000">
                                     {/* Image  */}
                                     <div onClick={() => navigate(`/category/${item.name}`)} className=" w-16 h-16 lg:w-24 lg:h-24 max-w-xs rounded-full  bg-pink-500 transition-all hover:bg-pink-400 cursor-pointer mb-1 " >
                                         <div className="flex justify-center mb-12">
