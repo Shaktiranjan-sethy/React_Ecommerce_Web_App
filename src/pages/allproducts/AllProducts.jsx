@@ -107,7 +107,7 @@ function Allproducts() {
               .map((item, index) => {
                 const { title, price, originalPrice,discountPercentage, productRating, description, imageUrl, stocks, id } = item;
                 return (
-                  <div key={index} className="p-4 lg:w-1/4 md:w-1/3 sm:w-1/2 drop-shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
+                  <div key={index} className="p-4 lg:w-1/4 md:w-1/3 sm:w-1/2 w-full -z-10 drop-shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
                     <div className={`h-full flex flex-col justify-between rounded-2xl overflow-hidden ${mode === 'dark' ? 'bg-gray-800 text-white hover:drop-shadow-2xl' : 'bg-white text-gray-900'} hover:shadow-lg transition-shadow duration-300 ease-in-out`}>
                       <div onClick={() => window.location.href = `/productinfo/${id}`} key={index} className="flex justify-center cursor-pointer">
                         <img className=" w-full h-64 object-cover object-center p-2 hover:scale-110 transition-scale-110 duration-300 ease-in-out" src={imageUrl} alt="product" />

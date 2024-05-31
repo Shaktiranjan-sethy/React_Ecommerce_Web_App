@@ -43,7 +43,7 @@ const Services = () => {
             <span id="about"></span>
             <div className=" py-10 mt-10 sm:min-h-[450px] sm:grid sm:place-items-center" style={{ color: mode === 'dark' ? 'white' : '', }}>
                 <div className="container">
-                    <div className="pb-12">
+                    <div className="lg:pb-12 pb-7">
                         <h1
                             data-aos="fade-up"
                             className="text-3xl font-semibold text-center sm:text-4xl font-serif"
@@ -51,7 +51,7 @@ const Services = () => {
                             Why Choose Us
                         </h1>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4 m-4">
                         {skillsData.map((skill) => (
                             <div
                                 key={skill.name}

@@ -192,7 +192,7 @@ function Contact() {
                                     </a>
                                 </div>
                             </div>
-                            <div data-aos="zoom-in" data-aos-duration="300" >
+                            <div className='lg:mt-1 lg:-ml-10 lg:mr-24 mt-10' data-aos="zoom-in" data-aos-duration="300" >
                                 <img
                                     src={Gif}
                                     alt="mobile bike"

@@ -202,7 +202,7 @@ export default function Navbar() {
               <div className="ml-4 flex lg:ml-0">
                 <Link to={'/'} className='flex'>
                   <div className="flex ">
-                    <h1 className=' text-2xl font-bold text-black  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>E-Bharat</h1>
+                    <h1 className=' lg:text-2xl sm:text-xl text-sm font-bold text-black  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>E-Bharat</h1>
                   </div>
                 </Link>
               </div>
@@ -210,8 +210,8 @@ export default function Navbar() {
               <div className="ml-auto flex items-center">
 
                 {userName && (
-                  <div className="mr-10">
-                    <span className="text-pink-600 font-bold">Welcome, {userName.toUpperCase()}</span>
+                  <div className="lg:mr-10 mr-3">
+                    <span className="text-pink-600 lg:text-xl sm:text-sm text-xxs font-bold">Welcome, {userName.toUpperCase()}</span>
                   </div>
                 )}
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
@@ -307,7 +307,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Search */}
-                <div className="flex lg:ml-6">
+                <div className="flex lg:ml-6 ml-2">
                   <button className='' onClick={toggleMode}>
                     {/* <MdDarkMode size={35} style={{ color: mode === 'dark' ? 'white' : '' }} /> */}
                     {mode === 'light' ?

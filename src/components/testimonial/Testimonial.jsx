@@ -17,7 +17,7 @@ function Testimonial() {
 
     return (
         <div>
-            <section className="text-gray-600 body-font mb-8">
+            <section className="text-gray-600 body-font mb-8 -m-4">
                 <div className="container px-5 py-10 mx-auto" data-aos="zoom-in" data-aos-duration="1000">
                     <h1 className=' text-center text-3xl font-bold text-black' style={{ color: mode === 'dark' ? 'white' : '' }}>Testimonial</h1>
                     <h2 className=' text-center text-2xl font-semibold mb-10' style={{ color: mode === 'dark' ? 'white' : '' }}>What our <span className=' text-pink-500'>customers</span> are saying</h2>

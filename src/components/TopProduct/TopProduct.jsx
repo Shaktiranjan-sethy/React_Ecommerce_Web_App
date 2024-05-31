@@ -98,7 +98,7 @@ function TopProduct({ products }) {
                         .map((item, index) => {
                             const { title, price, originalPrice, discountPercentage, productRating, description, imageUrl, stocks, id } = item;
                             return (
-                                <div key={index} className="p-4 lg:w-1/4 md:w-1/3 sm:w-1/2 drop-shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
+                                <div key={index} className="p-4 lg:w-1/4 md:w-1/3 sm:w-1/2 w-full drop-shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
                                     <div className={`relative h-full flex flex-col justify-between rounded-2xl overflow-hidden ${mode === 'dark' ? 'bg-gray-800 text-white hover:drop-shadow-2xl' : 'bg-white text-gray-900'} hover:shadow-lg transition-shadow duration-300 ease-in-out`}>
                                         <span className="bestseller-badge absolute top-0 left-0 bg-cyan-700 text-white text-xs font-bold py-1 px-3 rounded-br-lg z-10">BESTSELLER</span>
                                         <div onClick={() => window.location.href = `/productinfo/${id}`} key={index} className="flex justify-center cursor-pointer">
