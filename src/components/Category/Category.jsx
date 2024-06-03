@@ -37,7 +37,7 @@ const category = [
     }
 ]
 
-const Category = () => {
+const Category = ({ isDropdownVisible }) => {
     // naviaget 
     const navigate = useNavigate();
 
@@ -52,7 +52,7 @@ const Category = () => {
                         {/* category  */}
                         {category.map((item, index) => {
                             return (
-                                <div key={index} className="px-3 lg:px-7 sm:px-2 " data-aos="fade-up" data-aos-duration="1000">
+                                <div key={index} className="px-3 lg:px-7 sm:px-2 " data-aos="fade-up" data-aos-duration="1000" style={{ zIndex: isDropdownVisible ? -10 : 30 }}>
                                     {/* Image  */}
                                     <div onClick={() => navigate(`/category/${item.name}`)} className=" w-16 h-16 lg:w-24 lg:h-24 max-w-xs rounded-full  bg-pink-500 transition-all hover:bg-pink-400 cursor-pointer mb-1 " >
                                         <div className="flex justify-center mb-12">

@@ -65,8 +65,8 @@ export default function Footer() {
             <img src="https://ecommerce-sk.vercel.app/pay.png" alt="" />
           </div>
         </div>
-        <div className= "flex lg:flex-wrap lg:justify-start lg:items-center gap-8 mt-14">
-          <p className='font-extrabold text-xl'>Available On...</p>
+        <div className= "flex lg:flex-wrap lg:justify-start lg:items-center gap-5 mt-14">
+          <p className='font-bold text-sm'>Available On...</p>
           <a href="#">
             <img
               src={PlayStoreImg}

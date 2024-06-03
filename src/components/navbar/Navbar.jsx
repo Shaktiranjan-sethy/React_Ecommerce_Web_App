@@ -37,6 +37,18 @@ export default function Navbar() {
     window.location.href = "/"
   }
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    }
+  }, [open]);
+
   return (
     <div className="bg-white sticky top-0 z-50" >
       {/* Mobile menu */}
@@ -199,7 +211,7 @@ export default function Navbar() {
               </button>
 
               {/* Logo */}
-              <div className="ml-4 flex lg:ml-0">
+              <div className="ml-1 flex lg:ml-0">
                 <Link to={'/'} className='flex'>
                   <div className="flex ">
                     <h1 className=' lg:text-2xl sm:text-xl text-sm font-bold text-black  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>E-Bharat</h1>
@@ -210,8 +222,9 @@ export default function Navbar() {
               <div className="ml-auto flex items-center">
 
                 {userName && (
-                  <div className="lg:mr-10 mr-3">
-                    <span className="text-pink-600 lg:text-xl sm:text-sm text-xxs font-bold">Welcome, {userName.toUpperCase()}</span>
+                  <div className="lg:mr-8 mr-1 flex lg:flex-row sm:flex-row flex-col">
+                      <span className="text-pink-400 lg:text-md sm:text-sm text-xxs font-semibold">Welcome, </span>
+                      <span className='text-pink-600 lg:text-md sm:ml-1 lg:ml-1 sm:text-sm text-xxs font-bold'>{userName.toUpperCase()}</span>
                   </div>
                 )}
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">

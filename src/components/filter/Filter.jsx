@@ -2,10 +2,10 @@ import React, { useContext, useState } from 'react';
 import myContext from '../../context/data/myContext';
 import { useNavigate } from "react-router";
 
-function Filter({ excludeFashion = false }) {
+function Filter({ excludeFashion = false,isDropdownVisible,setIsDropdownVisible }) {
     const context = useContext(myContext);
     const { mode, searchkey, setSearchkey, filterType, setFilterType, filterPrice, setFilterPrice, product } = context;
-    const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+    //const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
     const resetFilters = () => {
         setFilterType('All');
@@ -13,8 +13,9 @@ function Filter({ excludeFashion = false }) {
     };
 
     const handleSearchChange = (e) => {
-        setSearchkey(e.target.value);
-        setIsDropdownVisible(true);
+        const value = e.target.value;
+        setSearchkey(value);
+        setIsDropdownVisible(value.trim() !== '');
     };
 
     const handleProductClick = (id) => {
@@ -57,17 +58,17 @@ function Filter({ excludeFashion = false }) {
                         value={searchkey}
                         onChange={handleSearchChange}
                         placeholder="Search here"
-                        className="lg:px-8 lg:py-3 px-8 py-2 w-full rounded-md bg-violet-0 border-transparent outline-0 text-sm"
+                        className="lg:px-8 lg:py-3 sm:px-8 sm:py-2 px-6 py-1 w-full rounded-md bg-violet-0 border-transparent outline-0 text-sm"
                         style={{ backgroundColor: mode === 'dark' ? 'rgb(64 66 70)' : '', color: mode === 'dark' ? 'white' : '' }}
                     />
 
                     <div className=" flex justify-center relative">
                         {isDropdownVisible && searchkey && (
-                            <div className=" absolute bg-gray-200 w-96  md:w-96 lg:w-96  my-1 rounded-lg px-15 py-2" style={{ backgroundColor: mode === 'dark' ? '#282c34' : ''}}>
+                            <div className=" absolute bg-gray-200 w-auto  md:w-96 lg:w-96  my-1 rounded-lg px-15 py-2" style={{ backgroundColor: mode === 'dark' ? '#282c34' : ''}}>
                                 {filterSearchData.length > 0 ? (
                                     filterSearchData.map((item, index) => (
                                         <div key={index} className="py-2 px-2 cursor-pointer" onClick={() => handleProductClick(item.id)}>
-                                            <div className="flex items-center gap-5 hover:bg-slate-300">
+                                            <div className="flex items-center gap-5 hover:bg-slate-300 hover:text-black">
                                                 <img className="w-10 h-10" src={item.imageUrl} alt="" />
                                                 {item.title}
                                             </div>
@@ -85,19 +86,19 @@ function Filter({ excludeFashion = false }) {
                 </div>
                 <div className="flex items-center justify-between mt-4" >
                     <p className="font-medium">Filters</p>
-                    <button onClick={resetFilters} className="lg:px-4 lg:py-2 py-1 px-4 bg-gray-50 hover:bg-gray-200 text-gray-800 text-sm font-medium rounded-md" style={{ backgroundColor: mode === 'dark' ? 'rgb(64 66 70)' : '', color: mode === 'dark' ? 'white' : '' }}>
+                    <button onClick={resetFilters} className="lg:px-4 lg:py-2 sm:py-1 sm:px-4 px-4 bg-gray-50 hover:bg-gray-200 text-gray-800 text-sm font-medium rounded-md" style={{ backgroundColor: mode === 'dark' ? 'rgb(64 66 70)' : '', color: mode === 'dark' ? 'white' : '' }}>
                         Reset Filter
                     </button>
                 </div>
                 <div className=' px-2 py-0'>
                     <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-2">
-                        <select value={filterType} onChange={(e) => setFilterType(e.target.value)} className="lg:px-4 lg:py-3 px-4 py-2 w-full rounded-md bg-gray-50 border-transparent outline-0 focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" style={{ backgroundColor: mode === 'dark' ? 'rgb(64 66 70)' : '', color: mode === 'dark' ? 'white' : '' }}>
+                        <select value={filterType} onChange={(e) => setFilterType(e.target.value)} className="lg:px-4 lg:py-3 px-4 py-2 w-full lg:h-full sm:h-full h-8 rounded-md bg-gray-50 border-transparent outline-0 focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" style={{ backgroundColor: mode === 'dark' ? 'rgb(64 66 70)' : '', color: mode === 'dark' ? 'white' : '' }}>
                             <option value="All">All</option>
                             {uniqueCategories.map((category, index) => (
                                 <option key={index} value={category}>{category}</option>
                             ))}
                         </select>
-                        <select value={filterPrice} onChange={(e) => setFilterPrice(e.target.value)} className="lg:px-4 lg:py-3 px-4 py-2 w-full rounded-md bg-gray-50 border-transparent outline-0 focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" style={{ backgroundColor: mode === 'dark' ? 'rgb(64 66 70)' : '', color: mode === 'dark' ? 'white' : '' }}>
+                        <select value={filterPrice} onChange={(e) => setFilterPrice(e.target.value)} className="lg:px-4 lg:py-3 px-4 py-2 w-full lg:h-full sm:h-full h-8 rounded-md bg-gray-50 border-transparent outline-0 focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" style={{ backgroundColor: mode === 'dark' ? 'rgb(64 66 70)' : '', color: mode === 'dark' ? 'white' : '' }}>
                             {priceRanges.map((range, index) => (
                                 <option key={index} value={range.value}>{range.label}</option>
                             ))}
